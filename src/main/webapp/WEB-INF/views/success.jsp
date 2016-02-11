@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="${themeCSS}" />
 <title>Registration Confirmation Page</title>
 </head>
-<body>
+<body class="body">
 	<div class="container">
+		<img src="${themeImg}/banner.gif" />
 		message : ${success}
 		<br/>
 		<br/>

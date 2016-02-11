@@ -1,11 +1,19 @@
 .container {
-    padding-top: 10px;
-    width: 700px;
-    background-color: #b0e0e6;
+    width: 650px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #54595e;
+    background-color: #e8f4fc;
+}
+.title {
+	font-family: "Delicious", "Josefin Slab", "Open Sans";
+	font-size: 30px;
+	font-weight: bold;
 }
 tr:first-child{
 	font-weight: bold;
-	background-color: #C6C9C4;
+	font-color: #e8f4fc;
+	background-color: #54595e;
 }
 .error {
 	color: #ff0000;

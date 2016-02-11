@@ -12,8 +12,9 @@
 	<title>Employee Registration Form</title>
 </head>
 
-<body>
+<body class="body">
 	<div class="container">
+		<img src="${themeImg}/banner.gif" />
 		<h2>Registration Form</h2>
 	 
 		<form:form method="POST" modelAttribute="employee">
