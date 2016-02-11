@@ -8,6 +8,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<spring:url value="/resources/css/space-theme.css" var="themeCSS" />
+	<spring:url value="/resources/images/space-theme" var="themeImg" />
 	<link rel="stylesheet" href="${themeCSS}" />
 	<title>Employee Registration Form</title>
 </head>
