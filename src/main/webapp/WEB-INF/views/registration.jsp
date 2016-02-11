@@ -15,7 +15,8 @@
 <body class="body">
 	<div class="container">
 		<img src="${themeImg}/banner.gif" />
-		<h2>Registration Form</h2>
+		<br/>
+		<span class="title">Registration Form</span>
 	 
 		<form:form method="POST" modelAttribute="employee">
 			<form:input type="hidden" path="id" id="id"/>

@@ -13,7 +13,10 @@
 <body class="body">
 	<div class="container">
 		<img src="${themeImg}/banner.gif" />
-		message : ${success}
+		<br/>
+		<span class="title">message</span>
+		<br/>
+		<span class="title">${success}</span>
 		<br/>
 		<br/>
 		Go back to <a href="<c:url value='/list' />">List of All Employees</a>

@@ -5,7 +5,7 @@
 <html>
 <head>
 	<spring:url value="/resources/css/space-theme.css" var="themeCSS" />
-	<spring:url value="/resources/img/space-theme" var="themeImg" />
+	<spring:url value="/resources/images/space-theme" var="themeImg" />
 	<link rel="stylesheet" href="${themeCSS}" />
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>University Enrollments</title>
@@ -20,6 +20,7 @@
 <body>
 	<div class="container">
 		<img src="${themeImg}/banner1.gif" />
+		<br/>
 		<span class="title">List of Employees</span>	
 		<table>
 			<tr>
