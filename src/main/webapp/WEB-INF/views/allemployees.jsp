@@ -17,10 +17,10 @@
 </head>
 
 
-<body class="body">
+<body>
 	<div class="container">
-		<img src="${themeImg}/banner.gif" />
-		<h2 class="title">List of Employees</h2>	
+		<img src="${themeImg}/banner1.gif" />
+		<span class="title">List of Employees</span>	
 		<table>
 			<tr>
 				<td>NAME</td><td>Joining Date</td><td>Salary</td><td>SSN</td><td></td>
