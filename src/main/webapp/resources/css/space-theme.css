@@ -1,0 +1,12 @@
+.container {
+    padding-top: 10px;
+    width: 700px;
+    background-color: #b0e0e6;
+}
+tr:first-child{
+	font-weight: bold;
+	background-color: #C6C9C4;
+}
+.error {
+	color: #ff0000;
+}
