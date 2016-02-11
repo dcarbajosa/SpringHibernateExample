@@ -2,13 +2,14 @@
     width: 650px;
     border-style: solid;
     border-width: 5px;
-    border-color: #54595e;
+    border-color: #000000;
     background-color: #e8f4fc;
 }
 .title {
 	font-family: "Open Sans";
 	font-size: 30px;
 	font-weight: bold;
+	text-align: center;
 }
 .emptable {
 	border-width: 0px;
@@ -18,8 +19,8 @@
 }
 tr:first-child{
 	font-weight: bold;
-	font-color: #e8f4fc;
-	background-color: #54595e;
+	color: #e8f4fc;
+	background-color: #000000;
 	font-size: 14px;
 	text-align: center;
 }
@@ -36,9 +37,15 @@ body {
 	height: 100%;
     display: table-cell;
     vertical-align: middle;
-	background-color: #54595e;
+	background-color: #000000;
 }
 .tablebutton{
 	height: 30px;
 	width: 30px;
+}
+.addbutton{
+	position: relative;
+	height: 30px;
+	width: 30px;
+	right: 5px;
 }
