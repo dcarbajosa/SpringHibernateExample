@@ -22,7 +22,7 @@
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
 		<span class="title">List of Employees</span>	
-		<table>
+		<table class="emptable">
 			<tr>
 				<td>NAME</td>
 				<td>Joining Date</td>
@@ -36,8 +36,9 @@
 				<td>${employee.joiningDate}</td>
 				<td>${employee.salary}</td>
 				<td>${employee.ssn}}</td>
-				<td><a href="<c:url value='/edit-${employee.ssn}-employee' />"><img src="${themeImg}/edit-button.png" /></a>
-				<a href="<c:url value='/delete-${employee.ssn}-employee' />"><img src="${themeImg}/delete-button.png" /></a></td>
+				<td><a href="<c:url value='/edit-${employee.ssn}-employee' />"><img class="tablebutton" src="${themeImg}/edit-button.jpg" /></a>
+				<a href="<c:url value='/delete-${employee.ssn}-employee' />"><img class="tablebutton" src="${themeImg}/delete-button.png" /></a>
+				</td>
 				</tr>
 			</c:forEach>
 		</table>

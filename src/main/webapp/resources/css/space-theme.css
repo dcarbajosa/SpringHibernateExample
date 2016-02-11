@@ -6,14 +6,22 @@
     background-color: #e8f4fc;
 }
 .title {
-	font-family: "Delicious", "Josefin Slab", "Open Sans";
+	font-family: "Open Sans";
 	font-size: 30px;
 	font-weight: bold;
+}
+.emptable {
+	border-width: 0px;
+	width: 650px;
+	font-family: "Open Sans";
+	font-size: 12px;
 }
 tr:first-child{
 	font-weight: bold;
 	font-color: #e8f4fc;
 	background-color: #54595e;
+	font-size: 14px;
+	text-align: center;
 }
 .error {
 	color: #ff0000;
@@ -29,4 +37,8 @@ body {
     display: table-cell;
     vertical-align: middle;
 	background-color: #54595e;
+}
+.tablebutton{
+	height: 30px;
+	width: 30px;
 }
