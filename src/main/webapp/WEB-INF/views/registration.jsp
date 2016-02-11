@@ -15,7 +15,7 @@
 
 <body class="body">
 	<div class="container">
-		<img src="${themeImg}/banner.gif" />
+		<img src="${themeImg}/banner1.jpg" />
 		<br/>
 		<span class="title">Registration Form</span>
 	 

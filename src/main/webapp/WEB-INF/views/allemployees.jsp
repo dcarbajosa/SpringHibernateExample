@@ -19,20 +19,25 @@
 
 <body>
 	<div class="container">
-		<img src="${themeImg}/banner1.gif" />
+		<img src="${themeImg}/banner1.jpg" />
 		<br/>
 		<span class="title">List of Employees</span>	
 		<table>
 			<tr>
-				<td>NAME</td><td>Joining Date</td><td>Salary</td><td>SSN</td><td></td>
+				<td>NAME</td>
+				<td>Joining Date</td>
+				<td>Salary</td>
+				<td>SSN</td>
+				<td></td>
 			</tr>
 			<c:forEach items="${employees}" var="employee">
 				<tr>
 				<td>${employee.name}</td>
 				<td>${employee.joiningDate}</td>
 				<td>${employee.salary}</td>
-				<td><a href="<c:url value='/edit-${employee.ssn}-employee' />">${employee.ssn}</a></td>
-				<td><a href="<c:url value='/delete-${employee.ssn}-employee' />">delete</a></td>
+				<td>${employee.ssn}}</td>
+				<td><a href="<c:url value='/edit-${employee.ssn}-employee' />"><img src="${themeImg}/edit-button.png" /></a>
+				<a href="<c:url value='/delete-${employee.ssn}-employee' />"><img src="${themeImg}/delete-button.png" /></a></td>
 				</tr>
 			</c:forEach>
 		</table>
