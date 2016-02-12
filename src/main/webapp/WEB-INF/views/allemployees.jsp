@@ -36,10 +36,10 @@
 			</tr>
 			<c:forEach items="${employees}" var="employee">
 				<tr>
-				<td>${employee.name}</td>
-				<td>${employee.joiningDate}</td>
-				<td>${employee.salary}</td>
-				<td>${employee.ssn}</td>
+				<td class="rightcells">${employee.name}</td>
+				<td class="rightcells">${employee.joiningDate}</td>
+				<td class="rightcells">${employee.salary}</td>
+				<td class="rightcells">${employee.ssn}</td>
 				<td class="rightcells"><a href="<c:url value='/edit-${employee.ssn}-employee' />"><img class="tablebutton" src="${themeImg}/edit-button.png" /></a>
 				<a href="<c:url value='/delete-${employee.ssn}-employee' />"><img class="tablebutton" src="${themeImg}/delete-button.png" /></a>
 				</td>

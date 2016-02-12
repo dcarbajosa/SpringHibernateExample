@@ -50,7 +50,7 @@
 			    </tr>
 		
 				<tr>
-					<td class="rightcells" colspan="3">
+					<td colspan="2">
 						<c:choose>
 							<c:when test="${edit}">
 								<input type="submit" value="Update"/>
@@ -60,6 +60,7 @@
 							</c:otherwise>
 						</c:choose>
 					</td>
+					<td></td>
 				</tr>
 			</table>
 		</form:form>
