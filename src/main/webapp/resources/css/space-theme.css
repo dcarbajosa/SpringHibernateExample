@@ -14,7 +14,7 @@
 	color: #e8f4fc;
 }
 .title {
-	width:620px;
+	width:600px;
 	font-family: "Open Sans";
 	font-size: 30px;
 	font-weight: bold;
@@ -35,8 +35,10 @@
 	font-size: 12px;
 }
 tr,td{
-	text-align: right;
 	border: none;
+}
+.rightcells{
+	text-align: right;
 }
 .tableheader{
 	border: none;

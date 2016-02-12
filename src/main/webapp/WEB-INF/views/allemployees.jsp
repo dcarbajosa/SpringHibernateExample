@@ -26,7 +26,7 @@
 			<span class="title">List of Employees</span>
 		</div>
 		<a href="<c:url value='/new' />"><img class="titlebutton" src="${themeImg}/add-button.png" /></a>	
-		<table class="emptable">
+		<table class="emptable" cellspacing="0" cellpadding="0">
 			<tr class="tableheader">
 				<td>Name</td>
 				<td>Joining Date</td>
@@ -40,7 +40,7 @@
 				<td>${employee.joiningDate}</td>
 				<td>${employee.salary}</td>
 				<td>${employee.ssn}</td>
-				<td style="align: right;"><a href="<c:url value='/edit-${employee.ssn}-employee' />"><img class="tablebutton" src="${themeImg}/edit-button.png" /></a>
+				<td class="rightcells"><a href="<c:url value='/edit-${employee.ssn}-employee' />"><img class="tablebutton" src="${themeImg}/edit-button.png" /></a>
 				<a href="<c:url value='/delete-${employee.ssn}-employee' />"><img class="tablebutton" src="${themeImg}/delete-button.png" /></a>
 				</td>
 				</tr>

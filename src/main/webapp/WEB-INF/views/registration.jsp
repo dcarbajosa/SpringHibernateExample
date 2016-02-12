@@ -23,33 +23,33 @@
 	 	<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>	
 		<form:form method="POST" modelAttribute="employee">
 			<form:input type="hidden" path="id" id="id"/>
-			<table class="emptable">
+			<table class="emptable" cellspacing="0" cellpadding="0">
 				<tr>
-					<td><label for="name">Name: </label> </td>
+					<td class="rightcells"><label for="name">Name: </label> </td>
 					<td><form:input path="name" id="name"/></td>
 					<td><form:errors path="name" cssClass="error"/></td>
 			    </tr>
 		    
 				<tr>
-					<td><label for="joiningDate">Joining Date: </label> </td>
+					<td class="rightcells"><label for="joiningDate">Joining Date: </label> </td>
 					<td><form:input path="joiningDate" id="joiningDate"/></td>
 					<td><form:errors path="joiningDate" cssClass="error"/></td>
 			    </tr>
 		
 				<tr>
-					<td><label for="salary">Salary: </label> </td>
+					<td class="rightcells"><label for="salary">Salary: </label> </td>
 					<td><form:input path="salary" id="salary"/></td>
 					<td><form:errors path="salary" cssClass="error"/></td>
 			    </tr>
 		
 				<tr>
-					<td><label for="ssn">SSN: </label> </td>
+					<td class="rightcells"><label for="ssn">SSN: </label> </td>
 					<td><form:input path="ssn" id="ssn"/></td>
 					<td><form:errors path="ssn" cssClass="error"/></td>
 			    </tr>
 		
 				<tr>
-					<td colspan="3">
+					<td class="rightcells" colspan="3">
 						<c:choose>
 							<c:when test="${edit}">
 								<input type="submit" value="Update"/>

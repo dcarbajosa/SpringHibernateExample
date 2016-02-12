@@ -17,7 +17,7 @@
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
 		<div class="title">
-		<span class="title">message</span>
+		<span class="title">Message</span>
 		</div>
 		<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>
 		<br/>
