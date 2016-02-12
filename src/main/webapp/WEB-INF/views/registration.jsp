@@ -51,7 +51,7 @@
 		
 				<tr>
 					<td></td>
-					<td colspan="2" class="rightcells">
+					<td class="rightcells">
 						<c:choose>
 							<c:when test="${edit}">
 								<input type="submit" value="Update"/>
