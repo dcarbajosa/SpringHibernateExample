@@ -43,6 +43,9 @@ tr,td{
 .rightcells{
 	text-align: right;
 }
+.centercells{
+	text-align: center;
+}
 .tableheader{
 	border: none;
 	font-weight: bold;
@@ -76,5 +79,5 @@ body {
 	width: 40px;
 	position:absolute;
 	right:20px;
-	top:0px;
+	top:2px;
 }

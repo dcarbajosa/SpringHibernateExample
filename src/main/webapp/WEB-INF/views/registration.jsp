@@ -27,25 +27,25 @@
 			<table class="emptable" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="30%" class="rightcells"><label for="name">Name: </label> </td>
-					<td width="30%"><form:input width="100%" path="name" id="name"/></td>
+					<td width="30%" class="rightcells"><form:input width="100%" path="name" id="name"/></td>
 					<td width="40%"><form:errors path="name" cssClass="error"/></td>
 			    </tr>
 		    
 				<tr>
 					<td width="30%" class="rightcells"><label for="joiningDate">Joining Date: </label> </td>
-					<td width="30%"><form:input width="100%" path="joiningDate" id="joiningDate"/></td>
+					<td width="30%" class="rightcells"><form:input width="100%" path="joiningDate" id="joiningDate"/></td>
 					<td width="40%" ><form:errors path="joiningDate" cssClass="error"/></td>
 			    </tr>
 		
 				<tr>
 					<td width="30%" class="rightcells"><label for="salary">Salary: </label> </td>
-					<td width="30%"><form:input width="100%" path="salary" id="salary"/></td>
+					<td width="30%"class="rightcells"><form:input width="100%" path="salary" id="salary"/></td>
 					<td width="40%"><form:errors path="salary" cssClass="error"/></td>
 			    </tr>
 		
 				<tr>
 					<td width="30%" class="rightcells"><label for="ssn">SSN: </label> </td>
-					<td width="30%"><form:input width="100%" path="ssn" id="ssn"/></td>
+					<td width="30%" class="rightcells"><form:input width="100%" path="ssn" id="ssn"/></td>
 					<td width="40%"><form:errors path="ssn" cssClass="error"/></td>
 			    </tr>
 		
