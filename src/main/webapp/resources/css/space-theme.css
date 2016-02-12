@@ -5,14 +5,23 @@
     border-color: #000000;
     background-color: #e8f4fc;
 }
+.footer {
+	width:650px;
+	font-family: "Open Sans";
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	color: #e8f4fc;
+}
 .title {
+	width:620px;
 	font-family: "Open Sans";
 	font-size: 30px;
 	font-weight: bold;
 	text-align: center;
 }
 .emptable {
-	border-width: 0px;
+	border: none;
 	width: 650px;
 	font-family: "Open Sans";
 	font-size: 12px;
@@ -44,8 +53,7 @@ body {
 	width: 30px;
 }
 .addbutton{
-	position: relative;
+	vertical-align: middle;
 	height: 30px;
 	width: 30px;
-	right: 5px;
 }
