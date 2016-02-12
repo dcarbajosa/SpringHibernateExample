@@ -10,6 +10,7 @@
 	<spring:url value="/resources/css/space-theme.css" var="themeCSS" />
 	<spring:url value="/resources/images/space-theme" var="themeImg" />
 	<link rel="stylesheet" href="${themeCSS}" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
 	<title>Employee Registration Form</title>
 </head>
 
@@ -19,9 +20,9 @@
 		<br/>
 		<div class="title">
 			<span class="title">Registration Form</span>
+	 		<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>
 	 	</div>
-	 	<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>	
-		<form:form method="POST" modelAttribute="employee">
+	 	<form:form method="POST" modelAttribute="employee">
 			<form:input type="hidden" path="id" id="id"/>
 			<table class="emptable" cellspacing="0" cellpadding="0">
 				<tr>

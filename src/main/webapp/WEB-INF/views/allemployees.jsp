@@ -7,7 +7,7 @@
 	<spring:url value="/resources/css/space-theme.css" var="themeCSS" />
 	<spring:url value="/resources/images/space-theme" var="themeImg" />
 	<link rel="stylesheet" href="${themeCSS}" />
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>University Enrollments</title>
 
@@ -24,8 +24,8 @@
 		<br/>
 		<div class="title">
 			<span class="title">List of Employees</span>
+			<a href="<c:url value='/new' />"><img class="titlebutton" src="${themeImg}/add-button.png" /></a>	
 		</div>
-		<a href="<c:url value='/new' />"><img class="titlebutton" src="${themeImg}/add-button.png" /></a>	
 		<table class="emptable" cellspacing="0" cellpadding="0">
 			<tr class="tableheader">
 				<td>Name</td>

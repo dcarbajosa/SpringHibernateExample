@@ -9,6 +9,7 @@
 <spring:url value="/resources/css/space-theme.css" var="themeCSS" />
 <spring:url value="/resources/images/space-theme" var="themeImg" />
 <link rel="stylesheet" href="${themeCSS}" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
 <title>Registration Confirmation Page</title>
 </head>
 <body class="body">
@@ -17,9 +18,9 @@
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
 		<div class="title">
-		<span class="title">Message</span>
+			<span class="title">Message</span>
+			<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>
 		</div>
-		<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>
 		<br/>
 		<div class="successtext">
 		<span class="successtext">${success}</span>
