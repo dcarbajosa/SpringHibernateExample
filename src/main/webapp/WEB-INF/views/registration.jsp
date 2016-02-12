@@ -18,7 +18,7 @@
 	<div class="container">
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
-		<div class="title">
+		<div class="titlecontainer">
 			<span class="title">Registration Form</span>
 	 		<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>
 	 	</div>

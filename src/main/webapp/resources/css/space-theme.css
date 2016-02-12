@@ -13,12 +13,15 @@
 	text-align: center;
 	color: #e8f4fc;
 }
-.title {
+.titlecontainer{
+	text-align: center;
 	width:600px;
+	position: relative;
+}
+.title {
 	font-family: "Open Sans";
 	font-size: 30px;
 	font-weight: bold;
-	text-align: center;
 }
 .successtext {
 	width:650px;
@@ -71,6 +74,7 @@ body {
 	vertical-align: middle;
 	height: 30px;
 	width: 30px;
-	position:relative;
+	position:absolute;
+	right:5px;
 	right:5px;
 }

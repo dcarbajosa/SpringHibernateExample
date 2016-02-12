@@ -22,7 +22,7 @@
 	<div class="container">
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
-		<div class="title">
+		<div class="titlecontainer">
 			<span class="title">List of Employees</span>
 			<a href="<c:url value='/new' />"><img class="titlebutton" src="${themeImg}/add-button.png" /></a>	
 		</div>
