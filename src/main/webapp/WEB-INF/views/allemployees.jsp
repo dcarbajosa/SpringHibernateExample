@@ -22,10 +22,12 @@
 	<div class="container">
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
-		<span class="title">List of Employees</span>
-		<a href="<c:url value='/new' />"><img class="addbutton" src="${themeImg}/add-button.png" /></a>	
+		<div class="title">
+			<span class="title">List of Employees</span>
+		</div>
+		<a href="<c:url value='/new' />"><img class="titlebutton" src="${themeImg}/add-button.png" /></a>	
 		<table class="emptable">
-			<tr>
+			<tr class="tableheader">
 				<td>Name</td>
 				<td>Joining Date</td>
 				<td>Salary</td>

@@ -20,13 +20,26 @@
 	font-weight: bold;
 	text-align: center;
 }
+.successtext {
+	width:650px;
+	font-family: "Open Sans";
+	font-size: 20px;
+	font-weight: normal;
+	text-align: center;
+	color: #3d993f;
+}
 .emptable {
 	border: none;
 	width: 650px;
 	font-family: "Open Sans";
 	font-size: 12px;
 }
-tr:first-child{
+tr,td{
+	text-align: right;
+	border: none;
+}
+.tableheader{
+	border: none;
 	font-weight: bold;
 	color: #e8f4fc;
 	background-color: #000000;
@@ -52,7 +65,7 @@ body {
 	height: 30px;
 	width: 30px;
 }
-.addbutton{
+.titlebutton{
 	vertical-align: middle;
 	height: 30px;
 	width: 30px;

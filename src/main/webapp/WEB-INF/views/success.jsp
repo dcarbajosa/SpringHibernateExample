@@ -13,14 +13,19 @@
 </head>
 <body class="body">
 	<div class="container">
+		
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
+		<div class="title">
 		<span class="title">message</span>
+		</div>
+		<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>
 		<br/>
-		<span class="title">${success}</span>
+		<div class="successtext">
+		<span class="successtext">${success}</span>
+		</div>
 		<br/>
 		<br/>
-		Go back to <a href="<c:url value='/list' />">List of All Employees</a>
 	</div>	
 </body>
 

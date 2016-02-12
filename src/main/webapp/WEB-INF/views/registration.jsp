@@ -17,11 +17,13 @@
 	<div class="container">
 		<img src="${themeImg}/banner1.jpg" />
 		<br/>
-		<span class="title">Registration Form</span>
-	 
+		<div class="title">
+			<span class="title">Registration Form</span>
+	 	</div>
+	 	<a href="<c:url value='/list' />"><img class="titlebutton" src="${themeImg}/back-button.png" /></a>	
 		<form:form method="POST" modelAttribute="employee">
 			<form:input type="hidden" path="id" id="id"/>
-			<table>
+			<table class="emptable">
 				<tr>
 					<td><label for="name">Name: </label> </td>
 					<td><form:input path="name" id="name"/></td>
@@ -62,7 +64,6 @@
 		</form:form>
 		<br/>
 		<br/>
-		Go back to <a href="<c:url value='/list' />">List of All Employees</a>
 	</div>
 </body>
 </html>
