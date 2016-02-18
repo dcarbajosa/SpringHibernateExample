@@ -50,7 +50,10 @@
 				</tr>
 			</c:forEach>
 		</table>
+		<div class="titlecontainer">
+			<span class="footer">The Moon Corporation &copy; 2026</span>
+		</div>
 	</div>
-	<span class="title">The Moon Corporation &copy; 2026</span>
+	
 </body>
 </html>
