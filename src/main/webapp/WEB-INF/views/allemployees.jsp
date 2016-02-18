@@ -4,8 +4,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
+	<!--
 	<spring:url value="/resources/css/space-theme.css" var="themeCSS" />
 	<spring:url value="/resources/images/space-theme" var="themeImg" />
+	-->
+	<spring:url value="/resources/css/pet-theme.css" var="themeCSS" />
+	<spring:url value="/resources/images/pet-theme" var="themeImg" />
 	<link rel="stylesheet" href="${themeCSS}" />
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
