@@ -8,10 +8,10 @@
 .footer {
 	width:650px;
 	font-family: "Myriad Pro", Myriad;
-	font-size: 10px;
+	font-size: 15px;
 	font-weight: bold;
 	text-align: center;
-	color: #e8f4fc;
+	color: #603a10;
 }
 .titlecontainer{
 	text-align: center;
@@ -82,5 +82,5 @@ body {
 	width: 30px;
 	position:absolute;
 	right:19px;
-	top:0px;
+	top:2px;
 }

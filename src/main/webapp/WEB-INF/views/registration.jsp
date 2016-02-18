@@ -71,10 +71,10 @@
 		</form:form>
 		<br/>
 		<br/>
-		<div class="titlecontainer">
-			<span class="footer">The Moon Corporation &copy; 2026</span>
-		</div>
+		
 	</div>
-	
+	<div class="titlecontainer">
+		<span class="footer">The Moon Corporation &copy; 2026</span>
+	</div>
 </body>
 </html>
