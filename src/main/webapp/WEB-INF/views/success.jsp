@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="${themeCSS}" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
 <title>Registration Confirmation Page</title>
-</head>
+</head> 
 <body class="body">
 	<div class="container">
 		<img src="${themeImg}/banner1.jpg" />
