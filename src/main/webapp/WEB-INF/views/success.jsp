@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<spring:url value="/resources/css/pet-theme.css" var="themeCSS" />
-<spring:url value="/resources/images/pet-theme" var="themeImg" />
+<spring:url value="/resources/css/space-theme.css" var="themeCSS" />
+<spring:url value="/resources/images/space-theme" var="themeImg" />
 <link rel="stylesheet" href="${themeCSS}" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
 <title>Registration Confirmation Page</title>
-</head> 
+</head>
 <body class="body">
 	<div class="container">
 		<img src="${themeImg}/banner1.jpg" />
