@@ -5,7 +5,7 @@
     "versionStrategy" : "major.minor.revision",
     "stages" : [
             {"stage" : {
-                    "name" : "commit",
+                    "name" : "Commit Phase",
                     "configFilePath" : "",
                     "type" : "ContinuousIntegration",
                     "steps" : [
@@ -87,6 +87,36 @@
                           }
                     ]
                 }
+            },
+            {"stage" : {
+                    "name" : "SIT Phase",
+                    "configFilePath" : "",
+                    "type" : "TestDeployment",
+                    "steps" : []
+                  }
+            },
+            {"stage" : {
+                    "name" : "UAT Phase",
+                    "configFilePath" : "",
+                    "type" : "TestDeployment",
+                    "steps" : []
+                  }
+            }
+            ,
+            {"stage" : {
+                    "name" : "OAT Phase",
+                    "configFilePath" : "",
+                    "type" : "TestDeployment",
+                    "steps" : []
+                  }
+            }
+            ,
+            {"stage" : {
+                    "name" : "Production",
+                    "configFilePath" : "",
+                    "type" : "ProductionDeployment",
+                    "steps" : []
+                  }
             }
         ]
     }
