@@ -1,0 +1,6 @@
+{"stage" : {
+        "name" : "UAT Phase",
+        "type" : "TestDeployment",
+        "steps" : []
+      }
+}

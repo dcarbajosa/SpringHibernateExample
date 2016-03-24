@@ -97,7 +97,7 @@
             },
             {"stage" : {
                     "name" : "UAT Phase",
-                    "configFilePath" : "",
+                    "configFilePath" : "./UAT/jenkins-uat.json",
                     "type" : "TestDeployment",
                     "steps" : []
                   }
