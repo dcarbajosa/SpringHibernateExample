@@ -1,0 +1,93 @@
+{"pipeline" :
+  {
+    "app_name" : "SpringHibernateExample",
+    "app_version" : "1.0.0",
+    "versionStrategy" : "major.minor.revision",
+    "stages" : [
+            {"stage" : {
+                    "name" : "commit",
+                    "configFilePath" : "",
+                    "type" : "ContinuousIntegration",
+                    "steps" : [
+                        {"step" : {
+                            "name" : "Build and Test",
+                            "tasks" : [
+                              {"task" : {
+                                          "name" : "Build and Test",
+                                          "executor" : "maven",
+                                          "revisionNumber" : "${buildnumber}",
+                                          "releasetype" : "SNAPSHOT",
+                                          "action" : "clean test",
+                                          "archive" : "true",
+                                          "archives" : [
+                                            {"archive" : {
+                                                    "name" : "application",
+                                                    "archiveResultsAs" : "**/target/*.war",
+                                                    "archiver" : "ArtifactArchiver",
+                                                    "fingerprint" : "true"
+                                                  }
+                                              },
+                                              {"archive" : {
+                                                    "name" : "unittest",
+                                                    "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
+                                                    "archiver" : "JUnitResultArchiver",
+                                                    "fingerprint" : "true"
+                                                  }
+                                              }
+                                          ]
+                                      }
+                                  }
+                              ]
+                          }
+                          },
+                          {"step" : {
+                                "name" : "Code Analisys",
+                                "tasks" : []
+                              }
+                          },
+                          {"step" : {
+                                "name" : "Store Artifacts and Tests",
+                                "tasks" : [
+                                  {"task" : {
+                                          "name" : "Store in Nexus",
+                                          "executor" : "maven",
+                                          "repo" : "nexus",
+                                          "repoId" : "snapshots",
+                                          "artifactId" : "SpringHibernateExample",
+                                          "groupId" : "com.websystique.springmvc",
+                                          "version" : "LATEST",
+                                          "builderAction" : "deploy",
+                                          "artifactFormat" : "war",
+                                          "storeTest" : "true",
+                                          "storeArtifacts" : "true"
+                                        }
+                                    },
+                                    {"task" : {
+                                          "name" : "Tag snapshot",
+                                          "executor" : "git",
+                                          "repo" : "git",
+                                          "repoURL" : "https://github.com:dcarbajosa/SpringHibernateExample.git",
+                                          "credentialsid" : "",
+                                          "tag" : "${newVersion}",
+                                          "tagComment" : "Snapshot from Jenkins Version: ${newVersion}"
+                                        }
+                                    }
+                                ]
+                            }
+                          },
+                          {"step" : {
+                                "name" : "Send Metrics",
+                                "tasks" : []
+                              }
+                          },
+                          {"step" : {
+                                "name" : "Notify",
+                                "tasks" : []
+                              }
+                          }
+                    ]
+                }
+            }
+        ]
+    }
+}
