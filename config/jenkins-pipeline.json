@@ -17,31 +17,30 @@
                                           "worker" : "maven",
                                           "revisionNumber" : "env.BUILD_NUMBER",
                                           "releasetype" : "SNAPSHOT",
-                                          "action" : "clean test",
-                                          "archiveInJenkins" : "true",
-                                          "generateNewVersion" : "true",
-                                          "jenkinsArchives" : [
-                                            {"jenkinsArchive" : {
-                                                    "name" : "application",
-                                                    "archiveResultsAs" : "**/target/*.war",
-                                                    "excludeResultsAs" : "",
-                                                    "resultType" : "artifacts",
-                                                    "archiveWorker" : "ArtifactArchiver",
-                                                    "fingerprint" : "true"
-                                                  }
-                                              },
-                                              {"jenkinsArchive" : {
-                                                    "name" : "unittest",
-                                                    "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
-                                                    "excludeResultsAs" : "",
-                                                    "resultType" : "TestResult",
-                                                    "archiveWorker" : "JUnitResultArchiver",
-                                                    "fingerprint" : "true"
-                                                  }
-                                              }
-                                          ]
-                                      }
-                                  }
+                                          "action" : "clean package",
+                                          "generateNewVersion" : "true"
+                                        },
+                                  "task" :{
+                                          "name" : "Archive Artifact",
+                                          "wfFunction" : "archive",
+                                          "worker" : "jenkinsArchiver",
+                                          "archiveResultsAs" : "**/target/*.war",
+                                          "excludeResultsAs" : "",
+                                          "resultType" : "artifacts",
+                                          "archiveWorker" : "ArtifactArchiver",
+                                          "fingerprint" : "true"
+                                        },
+                                  "task" :{
+                                          "name" : "Archive Unit Test",
+                                          "wfFunction" : "archive",
+                                          "worker" : "jenkinsArchiver",
+                                          "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
+                                          "excludeResultsAs" : "",
+                                          "resultType" : "TestResult",
+                                          "archiveWorker" : "JUnitResultArchiver",
+                                          "fingerprint" : "true"
+                                        }
+                                    }
                               ]
                           }
                           },
@@ -55,16 +54,19 @@
                                 "tasks" : [
                                   {"task" : {
                                           "name" : "Store Artifacts And Tests In Artifact Repository",
-                                          "worker" : "maven",
+                                          "worker" : "nexus",
                                           "artifactRepo" : "nexus",
                                           "artifactRepoId" : "snapshots",
                                           "artifactId" : "SpringHibernateExample",
                                           "artifactGroupId" : "com.websystique.springmvc",
-                                          "artifactVersion" : "LATEST",
+                                          "artifactVersion" : "env.VERSION",
                                           "action" : "deploy",
                                           "artifactFormat" : "war",
                                           "storeTest" : "true",
-                                          "storeArtifacts" : "true"
+                                          "storeArtifacts" : "true",
+                                          "auxiliaryWorkers" : [
+                                                {"worker": "maven"}
+                                          ]
                                         }
                                     },
                                     {"task" : {
