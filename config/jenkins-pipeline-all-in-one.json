@@ -1,0 +1,132 @@
+{"pipeline" :
+  {
+    "appName" : "SpringHibernateExample",
+    "appVersion" : "1.0.0",
+    "versionStrategy" : "major.minor.revision",
+    "stages" : [
+            {"stage" : {
+                    "name" : "Commit Phase",
+                    "configFilePath" : "",
+                    "type" : "ContinuousIntegration",
+                    "steps" : [
+                        {"step" : {
+                            "name" : "Build And UnitTest",
+                            "tasks" : [
+                              {"task" : {
+                                          "name" : "Build And UnitTest",
+                                          "worker" : "maven",
+                                          "revisionNumber" : "env.BUILD_NUMBER",
+                                          "releasetype" : "SNAPSHOT",
+                                          "action" : "clean test",
+                                          "generateNewVersion" : "true"
+                                        }
+                                  },
+                                  {"task" : {
+                                          "name" : "Archive Artifact",
+                                          "wfFunction" : "archive",
+                                          "worker" : "jenkinsArchiver",
+                                          "archiveResultsAs" : "**/target/*.war",
+                                          "excludeResultsAs" : "",
+                                          "resultType" : "artifacts",
+                                          "archiveWorker" : "ArtifactArchiver",
+                                          "fingerprint" : "true"
+                                        }
+                                  },
+                                  {"task" : {
+                                          "name" : "Archive Unit Test",
+                                          "wfFunction" : "archive",
+                                          "worker" : "jenkinsArchiver",
+                                          "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
+                                          "excludeResultsAs" : "",
+                                          "resultType" : "TestResult",
+                                          "archiveWorker" : "JUnitResultArchiver",
+                                          "fingerprint" : "true"
+                                        }
+                                  }
+                              ]
+                          }
+                          },
+                          {"step" : {
+                                "name" : "Code Analisys",
+                                "tasks" : []
+                              }
+                          },
+                          {"step" : {
+                                "name" : "Store Artifacts And Tests In Artifact Repository",
+                                "tasks" : [
+                                  {"task" : {
+                                          "name" : "Store Artifacts And Tests In Artifact Repository",
+                                          "worker" : "nexus",
+                                          "artifactRepo" : "nexus",
+                                          "artifactRepoId" : "snapshots",
+                                          "artifactId" : "SpringHibernateExample",
+                                          "artifactGroupId" : "com.websystique.springmvc",
+                                          "artifactVersion" : "env.VERSION",
+                                          "action" : "deploy",
+                                          "artifactFormat" : "war",
+                                          "storeTest" : "true",
+                                          "storeArtifacts" : "true",
+                                          "auxiliaryWorkers" : [
+                                                {"worker": "maven"}
+                                          ]
+                                        }
+                                    },
+                                    {"task" : {
+                                          "name" : "Tag Snapshot",
+                                          "worker" : "git",
+                                          "repo" : "git",
+                                          "repoURL" : "https://github.com:dcarbajosa/SpringHibernateExample.git",
+                                          "credentialsid" : "",
+                                          "tag" : "env.VERSION",
+                                          "tagComment" : "Snapshot from Jenkins Version: ${newVersion}"
+                                        }
+                                    }
+                                ]
+                            }
+                          },
+                          {"step" : {
+                                "name" : "Send Metrics",
+                                "tasks" : []
+                              }
+                          },
+                          {"step" : {
+                                "name" : "Notify",
+                                "tasks" : []
+                              }
+                          }
+                    ]
+                }
+            },
+            {"stage" : {
+                    "name" : "SIT Phase",
+                    "configFilePath" : "",
+                    "type" : "TestDeployment",
+                    "steps" : []
+                  }
+            },
+            {"stage" : {
+                    "name" : "UAT Phase",
+                    "configFilePath" : "./UAT/jenkins-uat.json",
+                    "type" : "TestDeployment",
+                    "steps" : []
+                  }
+            }
+            ,
+            {"stage" : {
+                    "name" : "OAT Phase",
+                    "configFilePath" : "",
+                    "type" : "TestDeployment",
+                    "steps" : []
+                  }
+            }
+            ,
+            {"stage" : {
+                    "name" : "Production",
+                    "configFilePath" : "",
+                    "type" : "ProductionDeployment",
+                    "steps" : []
+                  }
+            }
+        ]
+    }
+}
