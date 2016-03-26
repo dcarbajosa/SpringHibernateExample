@@ -10,7 +10,7 @@
                               "worker" : "maven",
                               "revisionNumber" : "env.BUILD_NUMBER",
                               "releasetype" : "SNAPSHOT",
-                              "action" : "clean test",
+                              "action" : "clean package",
                               "generateNewVersion" : "true"
                             }
                         },
