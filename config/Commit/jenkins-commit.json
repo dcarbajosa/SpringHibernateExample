@@ -10,10 +10,32 @@
                               "worker" : "maven",
                               "revisionNumber" : "env.BUILD_NUMBER",
                               "releasetype" : "SNAPSHOT",
-                              "action" : "clean package",
+                              "action" : "clean test",
                               "generateNewVersion" : "true"
                             }
-                        }
+                        },
+                      {"task" : {
+                              "name" : "Archive Artifact",
+                              "wfFunction" : "archive",
+                              "worker" : "jenkinsArchiver",
+                              "archiveResultsAs" : "**/target/*.war",
+                              "excludeResultsAs" : "",
+                              "resultType" : "artifacts",
+                              "archiveWorker" : "ArtifactArchiver",
+                              "fingerprint" : "true"
+                            }
+                      },
+                      {"task" : {
+                              "name" : "Archive Unit Test",
+                              "wfFunction" : "archive",
+                              "worker" : "jenkinsArchiver",
+                              "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
+                              "excludeResultsAs" : "",
+                              "resultType" : "TestResult",
+                              "archiveWorker" : "JUnitResultArchiver",
+                              "fingerprint" : "true"
+                            }
+                      }
                   ]
               }
             }
