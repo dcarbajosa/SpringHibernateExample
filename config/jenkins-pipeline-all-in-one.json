@@ -38,7 +38,7 @@
                                           "worker" : "jenkinsArchiver",
                                           "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
                                           "excludeResultsAs" : "",
-                                          "resultType" : "testResults",
+                                          "resultType" : "testResultspwd",
                                           "archiveWorker" : "JUnitResultArchiver",
                                           "fingerprint" : "true"
                                         }
