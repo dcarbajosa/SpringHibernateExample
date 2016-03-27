@@ -13,10 +13,62 @@
                               "action" : "clean package",
                               "generateNewVersion" : "true"
                             }
+                        },{"task" : {
+                                "name" : "Archive Artifact",
+                                "wfFunction" : "archive",
+                                "worker" : "jenkinsArchiver",
+                                "archiveResultsAs" : "**/target/*.war",
+                                "excludeResultsAs" : "",
+                                "resultType" : "artifacts",
+                                "archiveWorker" : "ArtifactArchiver",
+                                "fingerprint" : "true"
+                              }
+                        },
+                        {"task" : {
+                                "name" : "Archive Unit Test",
+                                "wfFunction" : "archive",
+                                "worker" : "jenkinsArchiver",
+                                "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
+                                "excludeResultsAs" : "",
+                                "resultType" : "TestResult",
+                                "archiveWorker" : "JUnitResultArchiver",
+                                "fingerprint" : "true"
+                              }
                         }
                   ]
+                }
+              },
+              {"step" : {
+                    "name" : "Code Analisys",
+                    "tasks" : []
+                  }
+              },
+              {"step" : {
+                    "name" : "Store Artifacts And Tests In Artifact Repository",
+                    "tasks" : [
+                        {"task" : {
+                              "name" : "Tag Snapshot",
+                              "worker" : "git",
+                              "repo" : "git",
+                              "repoURL" : "https://github.com:dcarbajosa/SpringHibernateExample.git",
+                              "credentialsid" : "",
+                              "tag" : "env.VERSION",
+                              "tagComment" : "Snapshot from Jenkins Version: ${newVersion}"
+                            }
+                        }
+                    ]
+                }
+              },
+              {"step" : {
+                    "name" : "Send Metrics",
+                    "tasks" : []
+                  }
+              },
+              {"step" : {
+                    "name" : "Notify",
+                    "tasks" : []
+                  }
               }
-            }
         ]
     }
 }
