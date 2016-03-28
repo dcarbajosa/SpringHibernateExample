@@ -46,6 +46,23 @@
               {"step" : {
                     "name" : "Store Artifacts And Tests In Artifact Repository",
                     "tasks" : [
+                      {"task" : {
+                                "name" : "Store Artifacts And Tests In Artifact Repository",
+                                "worker" : "nexus",
+                                "artifactRepo" : "nexus",
+                                "artifactRepoId" : "snapshots",
+                                "artifactId" : "SpringHibernateExample",
+                                "artifactGroupId" : "com.websystique.springmvc",
+                                "artifactVersion" : "env.VERSION",
+                                "action" : "deploy",
+                                "artifactFormat" : "war",
+                                "storeTest" : "true",
+                                "storeArtifacts" : "true",
+                                "auxiliaryWorkers" : [
+                                      {"worker": "maven"}
+                                ]
+                              }
+                          },
                         {"task" : {
                               "name" : "Tag Snapshot",
                               "worker" : "git",

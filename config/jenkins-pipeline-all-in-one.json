@@ -39,9 +39,9 @@
                                           "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
                                           "excludeResultsAs" : "",
                                           "resultType" : "testResultspwd",
-                                          "archiveWorker" : "JUnitResultArchiver",
-                                          "fingerprint" : "true"
+                                          "archiveWorker" : "JUnitResultArchiver"
                                         }
+
                                   }
                               ]
                           }
