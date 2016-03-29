@@ -47,20 +47,33 @@
                     "name" : "Store Artifacts And Tests In Artifact Repository",
                     "tasks" : [
                       {"task" : {
-                                "name" : "Store Artifacts And Tests In Artifact Repository",
+                                "name" : "Store Artifacts In Artifact Repository",
                                 "worker" : "nexus",
                                 "artifactRepo" : "nexus",
+                                "artifactRepo" : "env.NEXUS_URL",
+                                "credentialsId" : "f4b764b9-815b-43c9-bc18-82307bd3f820",
                                 "artifactRepoId" : "snapshots",
                                 "artifactId" : "SpringHibernateExample",
                                 "artifactGroupId" : "com.websystique.springmvc",
                                 "artifactVersion" : "env.VERSION",
-                                "action" : "deploy",
                                 "artifactFormat" : "war",
                                 "storeTest" : "true",
-                                "storeArtifacts" : "true",
-                                "auxiliaryWorkers" : [
-                                      {"worker": "maven"}
-                                ]
+                                "storeArtifacts" : "true"
+                              }
+                          },
+                      {"task" : {
+                                "name" : "Store Tests In Artifact Repository",
+                                "worker" : "nexus",
+                                "artifactRepo" : "nexus",
+                                "artifactRepoURL" : "env.NEXUS_URL",
+                                "credentialsId" : "f4b764b9-815b-43c9-bc18-82307bd3f820",
+                                "artifactRepoId" : "snapshots",
+                                "artifactId" : "SpringHibernateExample",
+                                "artifactGroupId" : "com.websystique.springmvc",
+                                "artifactVersion" : "env.VERSION",
+                                "artifactFormat" : "war",
+                                "storeTest" : "true",
+                                "storeArtifacts" : "true"
                               }
                           },
                         {"task" : {
@@ -68,7 +81,7 @@
                               "worker" : "git",
                               "repo" : "git",
                               "repoURL" : "https://github.com:dcarbajosa/SpringHibernateExample.git",
-                              "credentialsid" : "",
+                              "credentialsId" : "",
                               "tag" : "env.VERSION",
                               "tagComment" : "Snapshot from Jenkins Version: ${newVersion}"
                             }
