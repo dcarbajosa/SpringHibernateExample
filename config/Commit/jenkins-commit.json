@@ -55,7 +55,7 @@
                                 "artifactRepoId" : "snapshots",
                                 "artifactId" : "SpringHibernateExample",
                                 "artifactGroupId" : "com.websystique.springmvc",
-                                "artifactVersion" : "env.VERSION",
+                                "artifactVersion" : "env.VERSION-env.RELEASE_TYPE",
                                 "artifactFormat" : "war",
                                 "artifactLocation" : "./target",
                                 "auxiliaryWorkers" : [
@@ -72,7 +72,7 @@
                                 "artifactRepoId" : "snapshots",
                                 "artifactId" : "SpringHibernateExample",
                                 "artifactGroupId" : "com.websystique.springmvc",
-                                "artifactVersion" : "env.VERSION",
+                                "artifactVersion" : "env.VERSION-env.RELEASE_TYPE",
                                 "artifactFormat" : "war",
                                 "artifactLocation" : "",
                                 "artifactRepoLocation" : "",
