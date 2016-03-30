@@ -57,8 +57,7 @@
                                 "artifactGroupId" : "com.websystique.springmvc",
                                 "artifactVersion" : "env.VERSION",
                                 "artifactFormat" : "war",
-                                "storeTest" : "true",
-                                "storeArtifacts" : "true",
+                                "artifactLocation" : "./target",
                                 "auxiliaryWorkers" : [
                                       {"worker": "maven"}
                                 ]
@@ -75,6 +74,8 @@
                                 "artifactGroupId" : "com.websystique.springmvc",
                                 "artifactVersion" : "env.VERSION",
                                 "artifactFormat" : "war",
+                                "artifactLocation" : "",
+                                "artifactRepoLocation" : "",
                                 "storeTest" : "true",
                                 "storeArtifacts" : "true"
                               }
