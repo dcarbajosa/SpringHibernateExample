@@ -21,10 +21,7 @@
                                 "excludeResultsAs" : "",
                                 "resultType" : "artifacts",
                                 "archiveWorker" : "ArtifactArchiver",
-                                "fingerprint" : "true",
-                                "auxiliaryWorkers" : [
-                                      {"worker": "maven"}
-                                ]
+                                "fingerprint" : "true"
                               }
                         },
                         {"task" : {
@@ -61,7 +58,10 @@
                                 "artifactVersion" : "env.VERSION",
                                 "artifactFormat" : "war",
                                 "storeTest" : "true",
-                                "storeArtifacts" : "true"
+                                "storeArtifacts" : "true",
+                                "auxiliaryWorkers" : [
+                                      {"worker": "maven"}
+                                ]
                               }
                           },
                       {"task" : {
