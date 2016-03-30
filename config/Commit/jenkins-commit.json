@@ -83,7 +83,7 @@
                               "name" : "Tag Snapshot",
                               "worker" : "git",
                               "repo" : "git",
-                              "repoURL" : "https://github.com:dcarbajosa/SpringHibernateExample.git",
+                              "repoURL" : "https://github.com/dcarbajosa/SpringHibernateExample.git",
                               "credentialsId" : "",
                               "tag" : "env.VERSION",
                               "comment" : "Snapshot from Jenkins Version"
