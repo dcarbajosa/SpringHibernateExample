@@ -84,7 +84,7 @@
                               "worker" : "git",
                               "repo" : "git",
                               "repoURL" : "https://github.com/dcarbajosa/SpringHibernateExample.git",
-                              "credentialsId" : "",
+                              "credentialsId" : "de3ada30-d750-4fde-9a29-278f301f5352",
                               "tag" : "env.VERSION",
                               "comment" : "Snapshot from Jenkins Version"
                             }
