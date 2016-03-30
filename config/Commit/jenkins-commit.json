@@ -86,7 +86,7 @@
                               "repoURL" : "https://github.com:dcarbajosa/SpringHibernateExample.git",
                               "credentialsId" : "",
                               "tag" : "env.VERSION",
-                              "tagComment" : "Snapshot from Jenkins Version: ${newVersion}"
+                              "comment" : "Snapshot from Jenkins Version"
                             }
                         }
                     ]
