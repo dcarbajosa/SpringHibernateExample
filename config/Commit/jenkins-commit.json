@@ -21,7 +21,10 @@
                                 "excludeResultsAs" : "",
                                 "resultType" : "artifacts",
                                 "archiveWorker" : "ArtifactArchiver",
-                                "fingerprint" : "true"
+                                "fingerprint" : "true",
+                                "auxiliaryWorkers" : [
+                                      {"worker": "maven"}
+                                ]
                               }
                         },
                         {"task" : {
