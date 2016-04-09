@@ -6,7 +6,6 @@
     "stages" : [
             {"stage" : {
                     "name" : "Commit Phase",
-                    "configFilePath" : "",
                     "type" : "ContinuousIntegration",
                     "steps" : [
                         {"step" : {
@@ -16,35 +15,34 @@
                                           "name" : "Build And UnitTest",
                                           "worker" : "maven",
                                           "revisionNumber" : "env.BUILD_NUMBER",
-                                          "releasetype" : "SNAPSHOT",
-                                          "action" : "clean test",
+                                          "releaseType" : "SNAPSHOT",
+                                          "action" : "clean package",
                                           "generateNewVersion" : "true"
                                         }
-                                  },
-                                  {"task" : {
-                                          "name" : "Archive Artifact",
-                                          "wfFunction" : "archive",
-                                          "worker" : "jenkinsArchiver",
-                                          "archiveResultsAs" : "**/target/*.war",
-                                          "excludeResultsAs" : "",
-                                          "resultType" : "artifacts",
-                                          "archiveWorker" : "ArtifactArchiver",
-                                          "fingerprint" : "true"
-                                        }
-                                  },
-                                  {"task" : {
-                                          "name" : "Archive Unit Test",
-                                          "wfFunction" : "archive",
-                                          "worker" : "jenkinsArchiver",
-                                          "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
-                                          "excludeResultsAs" : "",
-                                          "resultType" : "testResultspwd",
-                                          "archiveWorker" : "JUnitResultArchiver"
-                                        }
-
-                                  }
+                                    },{"task" : {
+                                            "name" : "Archive Artifact",
+                                            "wfFunction" : "archive",
+                                            "worker" : "jenkinsArchiver",
+                                            "archiveResultsAs" : "**/target/*.war",
+                                            "excludeResultsAs" : "",
+                                            "resultType" : "artifacts",
+                                            "archiveWorker" : "ArtifactArchiver",
+                                            "fingerprint" : "true"
+                                          }
+                                    },
+                                    {"task" : {
+                                            "name" : "Archive Unit Test",
+                                            "wfFunction" : "archive",
+                                            "worker" : "jenkinsArchiver",
+                                            "archiveResultsAs" : "**/target/surefire-reports/TEST-*.xml",
+                                            "excludeResultsAs" : "",
+                                            "resultType" : "testResults",
+                                            "archiveWorker" : "JUnitResultArchiver",
+                                            "fingerprint" : "true"
+                                          }
+                                    }
                               ]
-                          }
+                            }
                           },
                           {"step" : {
                                 "name" : "Code Analisys",
@@ -55,30 +53,47 @@
                                 "name" : "Store Artifacts And Tests In Artifact Repository",
                                 "tasks" : [
                                   {"task" : {
-                                          "name" : "Store Artifacts And Tests In Artifact Repository",
-                                          "worker" : "nexus",
-                                          "artifactRepo" : "nexus",
-                                          "artifactRepoId" : "snapshots",
-                                          "artifactId" : "SpringHibernateExample",
-                                          "artifactGroupId" : "com.websystique.springmvc",
-                                          "artifactVersion" : "env.VERSION",
-                                          "action" : "deploy",
-                                          "artifactFormat" : "war",
-                                          "storeTest" : "true",
-                                          "storeArtifacts" : "true",
-                                          "auxiliaryWorkers" : [
-                                                {"worker": "maven"}
-                                          ]
-                                        }
-                                    },
+                                            "name" : "Store Artifacts In Artifact Repository",
+                                            "worker" : "nexus",
+                                            "artifactRepo" : "nexus",
+                                            "artifactRepoURL" : "env.NEXUS_URL",
+                                            "credentialsId" : "f4b764b9-815b-43c9-bc18-82307bd3f820",
+                                            "artifactRepoId" : "snapshots",
+                                            "artifactId" : "SpringHibernateExample",
+                                            "artifactGroupId" : "com.websystique.springmvc",
+                                            "artifactVersion" : "env.SNAPSHOT_VERSION",
+                                            "artifactFormat" : "war",
+                                            "artifactLocation" : "./target",
+                                            "auxiliaryWorkers" : [
+                                                  {"worker": "maven"}
+                                            ]
+                                          }
+                                      },
+                                  {"task" : {
+                                            "name" : "Store Tests In Artifact Repository",
+                                            "worker" : "nexus",
+                                            "artifactRepo" : "nexus",
+                                            "artifactRepoURL" : "env.NEXUS_URL",
+                                            "credentialsId" : "f4b764b9-815b-43c9-bc18-82307bd3f820",
+                                            "artifactRepoId" : "snapshots",
+                                            "artifactId" : "SpringHibernateExample",
+                                            "artifactGroupId" : "com.websystique.springmvc",
+                                            "artifactVersion" : "env.SNAPSHOT_VERSION",
+                                            "artifactFormat" : "war",
+                                            "artifactLocation" : "",
+                                            "artifactRepoLocation" : "",
+                                            "storeTest" : "true",
+                                            "storeArtifacts" : "true"
+                                          }
+                                      },
                                     {"task" : {
                                           "name" : "Tag Snapshot",
                                           "worker" : "git",
                                           "repo" : "git",
-                                          "repoURL" : "https://github.com:dcarbajosa/SpringHibernateExample.git",
-                                          "credentialsid" : "",
+                                          "repoURL" : "https://github.com/dcarbajosa/SpringHibernateExample.git",
+                                          "credentialsId" : "de3ada30-d750-4fde-9a29-278f301f5352",
                                           "tag" : "env.VERSION",
-                                          "tagComment" : "Snapshot from Jenkins Version: ${newVersion}"
+                                          "comment" : "Snapshot from Jenkins Version"
                                         }
                                     }
                                 ]
@@ -90,7 +105,7 @@
                               }
                           },
                           {"step" : {
-                                "name" : "Notify",
+                                "name" : "Send Notification",
                                 "tasks" : []
                               }
                           }

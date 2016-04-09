@@ -63,23 +63,6 @@
                                 ]
                               }
                           },
-                      {"task" : {
-                                "name" : "Store Tests In Artifact Repository",
-                                "worker" : "nexus",
-                                "artifactRepo" : "nexus",
-                                "artifactRepoURL" : "env.NEXUS_URL",
-                                "credentialsId" : "f4b764b9-815b-43c9-bc18-82307bd3f820",
-                                "artifactRepoId" : "snapshots",
-                                "artifactId" : "SpringHibernateExample",
-                                "artifactGroupId" : "com.websystique.springmvc",
-                                "artifactVersion" : "env.SNAPSHOT_VERSION",
-                                "artifactFormat" : "war",
-                                "artifactLocation" : "",
-                                "artifactRepoLocation" : "",
-                                "storeTest" : "true",
-                                "storeArtifacts" : "true"
-                              }
-                          },
                         {"task" : {
                               "name" : "Tag Snapshot",
                               "worker" : "git",
@@ -99,7 +82,7 @@
                   }
               },
               {"step" : {
-                    "name" : "Notify",
+                    "name" : "Send Notification",
                     "tasks" : []
                   }
               }
